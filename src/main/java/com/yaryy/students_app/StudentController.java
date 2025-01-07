@@ -21,3 +21,5 @@ public class StudentController {
         service.addNewStudent(student);
     }
 }
+//docker-compose up --build
+//docker-compose down
