@@ -2,8 +2,7 @@ package com.yaryy.students_app;
 
 import com.yaryy.students_app.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,5 +15,9 @@ public class StudentController {
     @RequestMapping("/getStudents")
     public List<Student> getStudents(){
         return service.findAll();
+    }
+    @PostMapping("/addStudent")
+    public void addStudent(@RequestBody Student student){
+        service.addNewStudent(student);
     }
 }
