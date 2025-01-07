@@ -1,0 +1,16 @@
+  version: "3.7"
+
+  services:
+    app:
+      build: .
+      ports:
+        - "9090:9090"
+
+    postgres:
+      image: postgres:latest
+      environment:
+        POSTGRES_USER: yaryy
+        POSTGRES_PASSWORD: 1234
+        POSTGRES_DB: yaryy
+      ports:
+        - 5433:5432
