@@ -5,6 +5,8 @@
       build: .
       ports:
         - "9090:9090"
+      networks:
+        - s-network
 
     postgres:
       image: postgres:latest
@@ -14,3 +16,9 @@
         POSTGRES_DB: yaryy
       ports:
         - 5433:5432
+      networks:
+        - s-network
+
+  networks:
+    s-network:
+      driver: bridge
